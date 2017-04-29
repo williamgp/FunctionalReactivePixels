@@ -6,14 +6,12 @@
 //  Copyright © 2017 William Peregoy. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "FRPAppDelegate.h"
 #import "FRPGalleryViewController.h"
 
-@interface AppDelegate ()
 
-@end
 
-@implementation AppDelegate
+@implementation FRPAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

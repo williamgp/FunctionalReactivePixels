@@ -7,8 +7,8 @@ target 'FunctionalReactivePixels' do
 
   # Pods for FunctionalReactivePixels
   pod 'ReactiveObjC'
-  pod 'libextobjc', '0.3'
-  pod '500px-iOS-api', '1.0.4'
+  pod 'libextobjc'
+  pod '500px-iOS-api'
   pod 'SVProgressHUD'
 
   target 'FunctionalReactivePixelsTests' do

@@ -1,0 +1,25 @@
+//
+//  FRP-Prefix.pch
+//  FunctionalReactivePixels
+//
+//  Created by William Peregoy on 29/04/2017.
+//  Copyright © 2017 William Peregoy. All rights reserved.
+//
+
+#ifndef FRP_Prefix_pch
+#define FRP_Prefix_pch
+
+//Pods
+#import <ReactiveObjC/ReactiveObjc.h>
+#import <500px-iOS-api/PXAPI.h>
+#import <libextobjc/EXTScope.h>
+
+
+//App Delegate
+#import "FRPAppDelegate.h"
+#define AppDelegate ((FRPAppDelegate *) [[UIApplication sharedApplication] delegate])
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* FRP_Prefix_pch */

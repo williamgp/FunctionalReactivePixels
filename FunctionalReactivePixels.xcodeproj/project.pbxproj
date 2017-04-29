@@ -10,7 +10,7 @@
 		3D6CEAE01EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CEADF1EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m */; };
 		3D6CEAE31EB4D28D0057CF5F /* FRPGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CEAE21EB4D28C0057CF5F /* FRPGalleryViewController.m */; };
 		3D99248E1EB4A4F10005310E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D99248D1EB4A4F10005310E /* main.m */; };
-		3D9924911EB4A4F10005310E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924901EB4A4F10005310E /* AppDelegate.m */; };
+		3D9924911EB4A4F10005310E /* FRPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924901EB4A4F10005310E /* FRPAppDelegate.m */; };
 		3D9924941EB4A4F10005310E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924931EB4A4F10005310E /* ViewController.m */; };
 		3D9924971EB4A4F10005310E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D9924951EB4A4F10005310E /* Main.storyboard */; };
 		3D9924991EB4A4F10005310E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D9924981EB4A4F10005310E /* Assets.xcassets */; };
@@ -45,10 +45,11 @@
 		3D6CEADF1EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPGalleryViewFlowLayout.m; sourceTree = "<group>"; };
 		3D6CEAE11EB4D28C0057CF5F /* FRPGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPGalleryViewController.h; sourceTree = "<group>"; };
 		3D6CEAE21EB4D28C0057CF5F /* FRPGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPGalleryViewController.m; sourceTree = "<group>"; };
+		3D6CEAE51EB4DDF60057CF5F /* FRP-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FRP-Prefix.pch"; sourceTree = "<group>"; };
 		3D9924891EB4A4F10005310E /* FunctionalReactivePixels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionalReactivePixels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D99248D1EB4A4F10005310E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3D99248F1EB4A4F10005310E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		3D9924901EB4A4F10005310E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3D99248F1EB4A4F10005310E /* FRPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRPAppDelegate.h; sourceTree = "<group>"; };
+		3D9924901EB4A4F10005310E /* FRPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRPAppDelegate.m; sourceTree = "<group>"; };
 		3D9924921EB4A4F10005310E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3D9924931EB4A4F10005310E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3D9924961EB4A4F10005310E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,8 +125,8 @@
 		3D99248B1EB4A4F10005310E /* FunctionalReactivePixels */ = {
 			isa = PBXGroup;
 			children = (
-				3D99248F1EB4A4F10005310E /* AppDelegate.h */,
-				3D9924901EB4A4F10005310E /* AppDelegate.m */,
+				3D99248F1EB4A4F10005310E /* FRPAppDelegate.h */,
+				3D9924901EB4A4F10005310E /* FRPAppDelegate.m */,
 				3D6CEADE1EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.h */,
 				3D6CEADF1EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m */,
 				3D6CEAE11EB4D28C0057CF5F /* FRPGalleryViewController.h */,
@@ -136,6 +137,7 @@
 				3D9924981EB4A4F10005310E /* Assets.xcassets */,
 				3D99249A1EB4A4F10005310E /* LaunchScreen.storyboard */,
 				3D99249D1EB4A4F10005310E /* Info.plist */,
+				3D6CEAE51EB4DDF60057CF5F /* FRP-Prefix.pch */,
 				3D99248C1EB4A4F10005310E /* Supporting Files */,
 			);
 			path = FunctionalReactivePixels;
@@ -475,7 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D9924941EB4A4F10005310E /* ViewController.m in Sources */,
-				3D9924911EB4A4F10005310E /* AppDelegate.m in Sources */,
+				3D9924911EB4A4F10005310E /* FRPAppDelegate.m in Sources */,
 				3D6CEAE01EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m in Sources */,
 				3D99248E1EB4A4F10005310E /* main.m in Sources */,
 				3D6CEAE31EB4D28D0057CF5F /* FRPGalleryViewController.m in Sources */,
@@ -631,6 +633,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5KSG8638H7;
+				GCC_PREFIX_HEADER = "FRP-Prefix.pch";
 				INFOPLIST_FILE = FunctionalReactivePixels/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -645,6 +648,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5KSG8638H7;
+				GCC_PREFIX_HEADER = "FRP-Prefix.pch";
 				INFOPLIST_FILE = FunctionalReactivePixels/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
