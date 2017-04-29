@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D6CEAE01EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CEADF1EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m */; };
 		3D6CEAE31EB4D28D0057CF5F /* FRPGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CEAE21EB4D28C0057CF5F /* FRPGalleryViewController.m */; };
+		3D6CEAE81EB4EFE80057CF5F /* FRPPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CEAE71EB4EFE80057CF5F /* FRPPhotoModel.m */; };
+		3D6CEAEB1EB4F0810057CF5F /* FRPPhotoImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CEAEA1EB4F0810057CF5F /* FRPPhotoImporter.m */; };
 		3D99248E1EB4A4F10005310E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D99248D1EB4A4F10005310E /* main.m */; };
 		3D9924911EB4A4F10005310E /* FRPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924901EB4A4F10005310E /* FRPAppDelegate.m */; };
 		3D9924941EB4A4F10005310E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924931EB4A4F10005310E /* ViewController.m */; };
@@ -46,6 +48,10 @@
 		3D6CEAE11EB4D28C0057CF5F /* FRPGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPGalleryViewController.h; sourceTree = "<group>"; };
 		3D6CEAE21EB4D28C0057CF5F /* FRPGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPGalleryViewController.m; sourceTree = "<group>"; };
 		3D6CEAE51EB4DDF60057CF5F /* FRP-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FRP-Prefix.pch"; sourceTree = "<group>"; };
+		3D6CEAE61EB4EFE80057CF5F /* FRPPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPPhotoModel.h; sourceTree = "<group>"; };
+		3D6CEAE71EB4EFE80057CF5F /* FRPPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPPhotoModel.m; sourceTree = "<group>"; };
+		3D6CEAE91EB4F0810057CF5F /* FRPPhotoImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPPhotoImporter.h; sourceTree = "<group>"; };
+		3D6CEAEA1EB4F0810057CF5F /* FRPPhotoImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPPhotoImporter.m; sourceTree = "<group>"; };
 		3D9924891EB4A4F10005310E /* FunctionalReactivePixels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionalReactivePixels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D99248D1EB4A4F10005310E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D99248F1EB4A4F10005310E /* FRPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRPAppDelegate.h; sourceTree = "<group>"; };
@@ -129,6 +135,10 @@
 				3D9924901EB4A4F10005310E /* FRPAppDelegate.m */,
 				3D6CEADE1EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.h */,
 				3D6CEADF1EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m */,
+				3D6CEAE61EB4EFE80057CF5F /* FRPPhotoModel.h */,
+				3D6CEAE71EB4EFE80057CF5F /* FRPPhotoModel.m */,
+				3D6CEAE91EB4F0810057CF5F /* FRPPhotoImporter.h */,
+				3D6CEAEA1EB4F0810057CF5F /* FRPPhotoImporter.m */,
 				3D6CEAE11EB4D28C0057CF5F /* FRPGalleryViewController.h */,
 				3D6CEAE21EB4D28C0057CF5F /* FRPGalleryViewController.m */,
 				3D9924921EB4A4F10005310E /* ViewController.h */,
@@ -476,7 +486,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6CEAEB1EB4F0810057CF5F /* FRPPhotoImporter.m in Sources */,
 				3D9924941EB4A4F10005310E /* ViewController.m in Sources */,
+				3D6CEAE81EB4EFE80057CF5F /* FRPPhotoModel.m in Sources */,
 				3D9924911EB4A4F10005310E /* FRPAppDelegate.m in Sources */,
 				3D6CEAE01EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m in Sources */,
 				3D99248E1EB4A4F10005310E /* main.m in Sources */,
