@@ -42,6 +42,33 @@
     return subject;
 }
 
++ (RACReplaySubject *)fetchPhotoDetails:(FRPPhotoModel *)photoModel {
+    
+    RACReplaySubject *subject = [RACReplaySubject subject];
+    
+    NSURLRequest *request = [self photoURLRequest:photoModel];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        
+        if (data) {
+            id results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil][@"photo"];
+            
+            [self configurePhotoModel:photoModel withDictionary:results];
+            [self downloadFullSizedImageForPhotoModel:photoModel];
+            
+            [subject sendNext:photoModel];
+            [subject sendCompleted];
+        
+        } else {
+            [subject sendError:connectionError];
+        }
+    }];
+    return subject;
+}
+
++ (NSURLRequest *)photoURLRequest:(FRPPhotoModel *)photoModel {
+    return [AppDelegate.apiHelper urlRequestForPhotoID:photoModel.identifier.integerValue];
+}
+
 + (NSURLRequest *)popularURLRequest {
 
     return [AppDelegate.apiHelper urlRequestForPhotoFeature:PXAPIHelperPhotoFeaturePopular resultsPerPage:100 page:0 photoSizes:PXPhotoModelSizeThumbnail sortOrder:PXAPIHelperSortOrderRating except:PXPhotoModelCategoryNude];
@@ -74,12 +101,29 @@
 
 + (void)downloadThumbnailForPhotoModel:(FRPPhotoModel *)photoModel {
     
-    NSAssert(photoModel.thumbnailURL, @"Thumbnail URL must not be nil");
+    [self download:photoModel.thumbnailURL withCompletion:^(NSData *data) {
+        photoModel.thumbnailData = data;
+    }];
+}
+
++ (void)downloadFullSizedImageForPhotoModel:(FRPPhotoModel *)photoModel {
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:photoModel.thumbnailURL]];
+    [self download:photoModel.fullsizedURL withCompletion:^(NSData *data) {
+        photoModel.fullsizedData = data;
+    }];
+}
+
++ (void)download:(NSString *)urlString withCompletion:(void(^)(NSData *data))completion {
+
+    NSAssert(urlString, @"Thumbnail URL must not be nil");
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        photoModel.thumbnailData = data;
+        
+        if (completion) {
+            completion(data);
+        }
     }];
 }
 
