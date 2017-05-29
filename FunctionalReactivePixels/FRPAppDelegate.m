@@ -10,13 +10,18 @@
 #import "FRPGalleryViewController.h"
 
 
+@interface FRPAppDelegate ()
+
+@property (nonatomic, readwrite) PXAPIHelper *apiHelper;
+
+@end
+
 
 @implementation FRPAppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    self.apiHelper = [[PXAPIHelper alloc] initWithHost:nil consumerKey:@"DC2To2BSOic1ChKDK15d44M2YHf9gbUJgdFoF0m" consumerSecret:@"i8WL4chWoZ4kw9fh3jzHK7XzTer1y5tUNvsTFNnB"];
+    self.apiHelper = [[PXAPIHelper alloc] initWithHost:nil consumerKey:@"4AIC83aylI052hE4IQRzvjua4b2tP7tUrK9sN36B" consumerSecret:@"VfIxaGJccL941OVRTcJbff8XjVtir2nOmkS9x1sW"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[FRPGalleryViewController new]];

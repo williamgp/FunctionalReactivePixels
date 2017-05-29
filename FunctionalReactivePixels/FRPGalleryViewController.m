@@ -8,8 +8,12 @@
 
 #import "FRPGalleryViewController.h"
 #import "FRPGalleryViewFlowLayout.h"
+#import "FRPPhotoImporter.h"
+#import "FRPCell.h"
 
 @interface FRPGalleryViewController ()
+
+@property (nonatomic, strong) NSArray *photosArray;
 
 @end
 
@@ -26,14 +30,32 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+ 
+    //Configure self
+    self.title = @"Popular on 500px";
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //Configure view
+    [self.collectionView registerClass:[FRPCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    //Reactive Stuff
+    @weakify(self);
+    [RACObserve(self, photosArray) subscribeNext:^(id  _Nullable x) { //returns a signal whenever photosArray is changed, completes when self is deallocated.
+        
+        @strongify(self);
+        [self.collectionView reloadData];
+    }];
     
-    // Do any additional setup after loading the view.
+    //Load data
+    [self loadPopularPhotos];
+}
+
+- (void)loadPopularPhotos {
+    
+    [[FRPPhotoImporter importPhotos] subscribeNext:^(id  _Nullable x) {
+        self.photosArray = x;
+    } error:^(NSError *error) {
+        NSLog(@"Couldnt fetch photos from 500px %@", error);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,20 +76,17 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    return self.photosArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    FRPCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
+    [cell setPhotoModel:self.photosArray[indexPath.row]];
     
     return cell;
 }

@@ -42,8 +42,45 @@
     return subject;
 }
 
-- (NSURLRequest *)popularURLRequest {
++ (NSURLRequest *)popularURLRequest {
+
+    return [AppDelegate.apiHelper urlRequestForPhotoFeature:PXAPIHelperPhotoFeaturePopular resultsPerPage:100 page:0 photoSizes:PXPhotoModelSizeThumbnail sortOrder:PXAPIHelperSortOrderRating except:PXPhotoModelCategoryNude];
+}
+
++ (void)configurePhotoModel:(FRPPhotoModel *)photoModel withDictionary:(NSDictionary *)dictionary {
     
+    //Basic details fetched with the first basic request
+    photoModel.photoName = dictionary[@"name"];
+    photoModel.identifier = dictionary[@"id"];
+    photoModel.photographerName = dictionary[@"user"][@"username"];
+    photoModel.rating = dictionary[@"rating"];
+    
+    photoModel.thumbnailURL = [self urlForImageSize:3 inArray:dictionary[@"images"]];
+    
+    //Extend attributes fetched with subsequent request
+    if (dictionary[@"comments_count"]) {
+        photoModel.fullsizedURL = [self urlForImageSize:4 inArray:dictionary[@"images"]];
+    }
+}
+
++ (NSString *)urlForImageSize:(NSInteger)size inArray:(NSArray *)array {
+    
+    return [[[[[array rac_sequence] filter:^BOOL(NSDictionary *value) {
+        return [value[@"size"] integerValue] == size; //filter out dictionaries whose size doesnt match our size param
+    }] map:^id(id value) {
+        return value[@"url"]; //use map: to extract the url value of the dictionaries
+    }] array] firstObject]; //Get a sequence of strings, turn back into array, and return the first object. Implicit error handling: firstObject returns nil if sequence is empty
+}
+
++ (void)downloadThumbnailForPhotoModel:(FRPPhotoModel *)photoModel {
+    
+    NSAssert(photoModel.thumbnailURL, @"Thumbnail URL must not be nil");
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:photoModel.thumbnailURL]];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        photoModel.thumbnailData = data;
+    }];
 }
 
 @end

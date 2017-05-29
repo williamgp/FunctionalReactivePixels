@@ -13,12 +13,12 @@
 		3D6CEAEB1EB4F0810057CF5F /* FRPPhotoImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CEAEA1EB4F0810057CF5F /* FRPPhotoImporter.m */; };
 		3D99248E1EB4A4F10005310E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D99248D1EB4A4F10005310E /* main.m */; };
 		3D9924911EB4A4F10005310E /* FRPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924901EB4A4F10005310E /* FRPAppDelegate.m */; };
-		3D9924941EB4A4F10005310E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924931EB4A4F10005310E /* ViewController.m */; };
 		3D9924971EB4A4F10005310E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D9924951EB4A4F10005310E /* Main.storyboard */; };
 		3D9924991EB4A4F10005310E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D9924981EB4A4F10005310E /* Assets.xcassets */; };
 		3D99249C1EB4A4F10005310E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D99249A1EB4A4F10005310E /* LaunchScreen.storyboard */; };
 		3D9924A71EB4A4F10005310E /* FunctionalReactivePixelsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924A61EB4A4F10005310E /* FunctionalReactivePixelsTests.m */; };
 		3D9924B21EB4A4F10005310E /* FunctionalReactivePixelsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924B11EB4A4F10005310E /* FunctionalReactivePixelsUITests.m */; };
+		3DDAC1B81EDC1FC900FF6E43 /* FRPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAC1B71EDC1FC900FF6E43 /* FRPCell.m */; };
 		42E541BFD4B840853C76A1AD /* libPods-FunctionalReactivePixels.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B474C80AB8A79892EB2EBCC /* libPods-FunctionalReactivePixels.a */; };
 		5A9CCE36CC2B56C137DFA5E5 /* libPods-FunctionalReactivePixelsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 571E8D6429A3920486DDE62E /* libPods-FunctionalReactivePixelsUITests.a */; };
 		E373D447A19A274C4479C613 /* libPods-FunctionalReactivePixelsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBA1EBA8D5E203CCCE520B6 /* libPods-FunctionalReactivePixelsTests.a */; };
@@ -56,8 +56,6 @@
 		3D99248D1EB4A4F10005310E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D99248F1EB4A4F10005310E /* FRPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRPAppDelegate.h; sourceTree = "<group>"; };
 		3D9924901EB4A4F10005310E /* FRPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRPAppDelegate.m; sourceTree = "<group>"; };
-		3D9924921EB4A4F10005310E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3D9924931EB4A4F10005310E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3D9924961EB4A4F10005310E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D9924981EB4A4F10005310E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D99249B1EB4A4F10005310E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +66,8 @@
 		3D9924AD1EB4A4F10005310E /* FunctionalReactivePixelsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunctionalReactivePixelsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9924B11EB4A4F10005310E /* FunctionalReactivePixelsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionalReactivePixelsUITests.m; sourceTree = "<group>"; };
 		3D9924B31EB4A4F10005310E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DDAC1B61EDC1FC900FF6E43 /* FRPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPCell.h; sourceTree = "<group>"; };
+		3DDAC1B71EDC1FC900FF6E43 /* FRPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPCell.m; sourceTree = "<group>"; };
 		476D2221A9ABC37A6045EF7C /* Pods-FunctionalReactivePixels.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionalReactivePixels.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionalReactivePixels/Pods-FunctionalReactivePixels.debug.xcconfig"; sourceTree = "<group>"; };
 		571E8D6429A3920486DDE62E /* libPods-FunctionalReactivePixelsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunctionalReactivePixelsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD0F0753E594444B0E241C4 /* Pods-FunctionalReactivePixelsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionalReactivePixelsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionalReactivePixelsUITests/Pods-FunctionalReactivePixelsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 				3D6CEAEA1EB4F0810057CF5F /* FRPPhotoImporter.m */,
 				3D6CEAE11EB4D28C0057CF5F /* FRPGalleryViewController.h */,
 				3D6CEAE21EB4D28C0057CF5F /* FRPGalleryViewController.m */,
-				3D9924921EB4A4F10005310E /* ViewController.h */,
-				3D9924931EB4A4F10005310E /* ViewController.m */,
+				3DDAC1B61EDC1FC900FF6E43 /* FRPCell.h */,
+				3DDAC1B71EDC1FC900FF6E43 /* FRPCell.m */,
 				3D9924951EB4A4F10005310E /* Main.storyboard */,
 				3D9924981EB4A4F10005310E /* Assets.xcassets */,
 				3D99249A1EB4A4F10005310E /* LaunchScreen.storyboard */,
@@ -487,9 +487,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6CEAEB1EB4F0810057CF5F /* FRPPhotoImporter.m in Sources */,
-				3D9924941EB4A4F10005310E /* ViewController.m in Sources */,
 				3D6CEAE81EB4EFE80057CF5F /* FRPPhotoModel.m in Sources */,
 				3D9924911EB4A4F10005310E /* FRPAppDelegate.m in Sources */,
+				3DDAC1B81EDC1FC900FF6E43 /* FRPCell.m in Sources */,
 				3D6CEAE01EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m in Sources */,
 				3D99248E1EB4A4F10005310E /* main.m in Sources */,
 				3D6CEAE31EB4D28D0057CF5F /* FRPGalleryViewController.m in Sources */,
