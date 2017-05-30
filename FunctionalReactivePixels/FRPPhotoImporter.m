@@ -46,8 +46,8 @@
    
     NSURLRequest *request = [self photoURLRequest:photoModel];
     
-    return [[[[[[NSURLConnection rac_sendAsynchronousRequest:request] map:^id(RACTuple *value) {
-        return [value second];
+    return [[[[[[NSURLConnection rac_sendAsynchronousRequest:request] reduceEach:^id(NSURLResponse *response, NSData *data){
+        return data;
     }] deliverOn:[RACScheduler mainThreadScheduler]] map:^id(NSData *data) {
         id results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil][@"photo"];
         
@@ -141,8 +141,8 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
-    return [[[NSURLConnection rac_sendAsynchronousRequest:request] map:^id(RACTuple *value) {
-        return [value second];
+    return [[[NSURLConnection rac_sendAsynchronousRequest:request] reduceEach:^id(NSURLResponse *response, NSData *data){
+        return data;
     }] deliverOn:[RACScheduler mainThreadScheduler]];
     
 //    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
