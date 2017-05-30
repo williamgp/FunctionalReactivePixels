@@ -58,29 +58,6 @@
     }] publish] autoconnect];
 }
 
-//+ (RACReplaySubject *)fetchPhotoDetails:(FRPPhotoModel *)photoModel {
-//    
-//    RACReplaySubject *subject = [RACReplaySubject subject];
-//    
-//    NSURLRequest *request = [self photoURLRequest:photoModel];
-//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-//        
-//        if (data) {
-//            id results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil][@"photo"];
-//            
-//            [self configurePhotoModel:photoModel withDictionary:results];
-//            [self downloadFullSizedImageForPhotoModel:photoModel];
-//            
-//            [subject sendNext:photoModel];
-//            [subject sendCompleted];
-//        
-//        } else {
-//            [subject sendError:connectionError];
-//        }
-//    }];
-//    return subject;
-//}
-
 + (NSURLRequest *)photoURLRequest:(FRPPhotoModel *)photoModel {
     return [AppDelegate.apiHelper urlRequestForPhotoID:photoModel.identifier.integerValue];
 }
@@ -118,21 +95,11 @@
 + (void)downloadThumbnailForPhotoModel:(FRPPhotoModel *)photoModel {
     
     RAC(photoModel, thumbnailData) = [self download:photoModel.thumbnailURL];
-    
-    //Abstracting
-//    [self download:photoModel.thumbnailURL withCompletion:^(NSData *data) {
-//        photoModel.thumbnailData = data;
-//    }];
 }
 
 + (void)downloadFullSizedImageForPhotoModel:(FRPPhotoModel *)photoModel {
     
     RAC(photoModel, fullsizedData) = [self download:photoModel.fullsizedURL];
-    
-    //Abstracting
-//    [self download:photoModel.fullsizedURL withCompletion:^(NSData *data) {
-//        photoModel.fullsizedData = data;
-//    }];
 }
 
 + (RACSignal *)download:(NSString *)urlString {
@@ -144,28 +111,6 @@
     return [[[NSURLConnection rac_sendAsynchronousRequest:request] reduceEach:^id(NSURLResponse *response, NSData *data){
         return data;
     }] deliverOn:[RACScheduler mainThreadScheduler]];
-    
-//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-//        
-//        if (completion) {
-//            completion(data);
-//        }
-//    }];
 }
-
-//Abstracting
-//+ (void)download:(NSString *)urlString withCompletion:(void(^)(NSData *data))completion {
-//
-//    NSAssert(urlString, @"Thumbnail URL must not be nil");
-//    
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-//    
-//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-//        
-//        if (completion) {
-//            completion(data);
-//        }
-//    }];
-//}
 
 @end

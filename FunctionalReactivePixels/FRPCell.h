@@ -14,6 +14,4 @@
 
 @property (nonatomic, strong) FRPPhotoModel *photoModel;
 
-//- (void)setPhotoModel:(FRPPhotoModel *)photoModel;
-
 @end

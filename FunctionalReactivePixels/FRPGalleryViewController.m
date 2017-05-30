@@ -67,52 +67,17 @@ static NSString * const reuseIdentifier = @"Cell";
         @strongify(self);
         [self.collectionView reloadData];
     }];
-    
-    //Load data
-    //[self loadPopularPhotos];
-    
-    //    RACSignal *photoSignal = [FRPPhotoImporter importPhotos];
-    //    RACSignal *photosLoaded = [photoSignal catch:^RACSignal * _Nonnull(NSError * _Nonnull error) {
-    //        NSLog(@"Couldnt fetch the photos from 500px %@", error);
-    //        return [RACSignal empty];
-    //    }];
-    //    RAC(self, photosArray) = photosLoaded;
-    //    [photosLoaded subscribeCompleted:^{
-    //        @strongify(self);
-    //        [self.collectionView reloadData];
-    //    }];
-    
-    //clean up local variable scope
+
     RAC(self, photosArray) = [[[[FRPPhotoImporter importPhotos] doCompleted:^{
         @strongify(self);
         [self.collectionView reloadData];
     }] logError] catchTo:[RACSignal empty]];
 }
 
-//Abstracted to viewDidLoad
-//- (void)loadPopularPhotos {
-//    
-//    [[FRPPhotoImporter importPhotos] subscribeNext:^(id  _Nullable x) {
-//        self.photosArray = x;
-//    } error:^(NSError *error) {
-//        NSLog(@"Couldnt fetch photos from 500px %@", error);
-//    }];
-//}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -131,24 +96,5 @@ static NSString * const reuseIdentifier = @"Cell";
     
     return cell;
 }
-
-//Abstracted to viewDidLoad
-//#pragma mark <UICollectionViewDelegate>
-//
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    FRPFullSizePhotoViewController *viewController = [[FRPFullSizePhotoViewController alloc]
-//                                                      initWithPhotoModels:self.photosArray
-//                                                      currentPhotoIndex:indexPath.item];
-//
-//    viewController.delegate = self;
-//    [self.navigationController pushViewController:viewController animated:YES];
-//}
-//
-//#pragma mark <FRPFullSizePhotoViewControllerDelegate>
-//
-//- (void)userDidScroll:(FRPFullSizePhotoViewController *)viewController toPhotoAtIndex:(NSInteger)index {
-//    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:NO];
-//}
 
 @end
