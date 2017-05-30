@@ -11,35 +11,25 @@
 
 @implementation FRPPhotoImporter
 
-+ (RACReplaySubject *)importPhotos {
-    RACReplaySubject * subject = [RACReplaySubject subject];
++ (RACSignal *)importPhotos {
     
     NSURLRequest *request = [self popularURLRequest];
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+    return [[[[[[NSURLConnection rac_sendAsynchronousRequest:request] reduceEach:^id(NSURLResponse *reponse, NSData *data){
+        return data;
+    }] deliverOn:[RACScheduler mainThreadScheduler]] map:^id(NSData *data) {
+        id results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
-        if (data) {
-            id results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        return [[[results[@"photos"] rac_sequence] map:^id(NSDictionary *photoDictionary) {
             
-            [subject sendNext:[[[results[@"photos"] rac_sequence] map:^id(NSDictionary *photoDictionary) {
-                
-                FRPPhotoModel *model = [FRPPhotoModel new];
-                
-                [self configurePhotoModel:model withDictionary:photoDictionary];
-                
-                [self downloadThumbnailForPhotoModel:model];
-                
-                return model;
+            FRPPhotoModel *model = [FRPPhotoModel new];
             
-            }] array]];
+            [self configurePhotoModel:model withDictionary:photoDictionary];
+            [self downloadThumbnailForPhotoModel:model];
             
-            [subject sendCompleted];
-        } else {
-            [subject sendError:connectionError];
-        }
-    }];
-    
-    return subject;
+            return model;
+        }] array];
+    }] publish] autoconnect];
 }
 
 + (RACSignal *)fetchPhotoDetails:(FRPPhotoModel *)photoModel {
