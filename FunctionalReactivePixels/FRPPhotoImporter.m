@@ -42,28 +42,44 @@
     return subject;
 }
 
-+ (RACReplaySubject *)fetchPhotoDetails:(FRPPhotoModel *)photoModel {
-    
-    RACReplaySubject *subject = [RACReplaySubject subject];
-    
++ (RACSignal *)fetchPhotoDetails:(FRPPhotoModel *)photoModel {
+   
     NSURLRequest *request = [self photoURLRequest:photoModel];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+    
+    return [[[[[[NSURLConnection rac_sendAsynchronousRequest:request] map:^id(RACTuple *value) {
+        return [value second];
+    }] deliverOn:[RACScheduler mainThreadScheduler]] map:^id(NSData *data) {
+        id results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil][@"photo"];
         
-        if (data) {
-            id results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil][@"photo"];
-            
-            [self configurePhotoModel:photoModel withDictionary:results];
-            [self downloadFullSizedImageForPhotoModel:photoModel];
-            
-            [subject sendNext:photoModel];
-            [subject sendCompleted];
+        [self configurePhotoModel:photoModel withDictionary:results];
+        [self downloadFullSizedImageForPhotoModel:photoModel];
         
-        } else {
-            [subject sendError:connectionError];
-        }
-    }];
-    return subject;
+        return photoModel;
+    }] publish] autoconnect];
 }
+
+//+ (RACReplaySubject *)fetchPhotoDetails:(FRPPhotoModel *)photoModel {
+//    
+//    RACReplaySubject *subject = [RACReplaySubject subject];
+//    
+//    NSURLRequest *request = [self photoURLRequest:photoModel];
+//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+//        
+//        if (data) {
+//            id results = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil][@"photo"];
+//            
+//            [self configurePhotoModel:photoModel withDictionary:results];
+//            [self downloadFullSizedImageForPhotoModel:photoModel];
+//            
+//            [subject sendNext:photoModel];
+//            [subject sendCompleted];
+//        
+//        } else {
+//            [subject sendError:connectionError];
+//        }
+//    }];
+//    return subject;
+//}
 
 + (NSURLRequest *)photoURLRequest:(FRPPhotoModel *)photoModel {
     return [AppDelegate.apiHelper urlRequestForPhotoID:photoModel.identifier.integerValue];
@@ -101,30 +117,55 @@
 
 + (void)downloadThumbnailForPhotoModel:(FRPPhotoModel *)photoModel {
     
-    [self download:photoModel.thumbnailURL withCompletion:^(NSData *data) {
-        photoModel.thumbnailData = data;
-    }];
+    RAC(photoModel, thumbnailData) = [self download:photoModel.thumbnailURL];
+    
+    //Abstracting
+//    [self download:photoModel.thumbnailURL withCompletion:^(NSData *data) {
+//        photoModel.thumbnailData = data;
+//    }];
 }
 
 + (void)downloadFullSizedImageForPhotoModel:(FRPPhotoModel *)photoModel {
     
-    [self download:photoModel.fullsizedURL withCompletion:^(NSData *data) {
-        photoModel.fullsizedData = data;
-    }];
+    RAC(photoModel, fullsizedData) = [self download:photoModel.fullsizedURL];
+    
+    //Abstracting
+//    [self download:photoModel.fullsizedURL withCompletion:^(NSData *data) {
+//        photoModel.fullsizedData = data;
+//    }];
 }
 
-+ (void)download:(NSString *)urlString withCompletion:(void(^)(NSData *data))completion {
-
++ (RACSignal *)download:(NSString *)urlString {
+    
     NSAssert(urlString, @"Thumbnail URL must not be nil");
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        
-        if (completion) {
-            completion(data);
-        }
-    }];
+    return [[[NSURLConnection rac_sendAsynchronousRequest:request] map:^id(RACTuple *value) {
+        return [value second];
+    }] deliverOn:[RACScheduler mainThreadScheduler]];
+    
+//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+//        
+//        if (completion) {
+//            completion(data);
+//        }
+//    }];
 }
+
+//Abstracting
+//+ (void)download:(NSString *)urlString withCompletion:(void(^)(NSData *data))completion {
+//
+//    NSAssert(urlString, @"Thumbnail URL must not be nil");
+//    
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+//    
+//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+//        
+//        if (completion) {
+//            completion(data);
+//        }
+//    }];
+//}
 
 @end
