@@ -61,6 +61,7 @@ static NSString * const reuseIdentifier = @"Cell";
         viewController.delegate = (id<FRPFullSizePhotoViewControllerDelegate>)viewControllerDelegate;
         [self.navigationController pushViewController:viewController animated:YES];
     }];
+    self.collectionView.delegate = self.collectionViewDelegate;
     
     [RACObserve(self, photosArray) subscribeNext:^(id  _Nullable x) { //returns a signal whenever photosArray is changed, completes when self is deallocated.
         
