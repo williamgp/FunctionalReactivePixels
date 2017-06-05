@@ -11,6 +11,7 @@
 
 #import "FRPPhotoModel.h"
 #import "FRPPhotoViewController.h"
+#import "FRPPhotoViewModel.h"
 
 @interface FRPFullSizePhotoViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
@@ -74,14 +75,16 @@
 }
 
 - (FRPPhotoViewController *)photoViewControllerForIndex:(NSInteger)index {
-    if (index >= 0 && index < self.viewModel.model.count) {
-        FRPPhotoModel *photoModel = self.viewModel.model[index];
+    
+    FRPPhotoModel *photoModel = [self.viewModel photoModelAtIndex:index];
+    if (photoModel) {
+        FRPPhotoViewModel *photoViewModel = [[FRPPhotoViewModel alloc] initWithModel:photoModel];
         
-        FRPPhotoViewController *photoViewController = [[FRPPhotoViewController alloc] initWithPhotoModel:photoModel index:index];
+        FRPPhotoViewController *photoViewController = [[FRPPhotoViewController alloc] initWithViewModel:photoViewModel index:index];
+        
         return photoViewController;
     }
-    
-    //Index was out of bounds, return nil
+
     return nil;
 }
 

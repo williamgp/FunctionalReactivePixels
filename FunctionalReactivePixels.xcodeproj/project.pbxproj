@@ -20,6 +20,7 @@
 		3D9924B21EB4A4F10005310E /* FunctionalReactivePixelsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924B11EB4A4F10005310E /* FunctionalReactivePixelsUITests.m */; };
 		3DCB5A8B1EE5125E00184287 /* FRPFullSizePhotoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB5A8A1EE5125E00184287 /* FRPFullSizePhotoViewModel.m */; };
 		3DCB5A901EE5175400184287 /* FRPGalleryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB5A8F1EE5175400184287 /* FRPGalleryViewModel.m */; };
+		3DCB5A941EE524EB00184287 /* FRPPhotoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB5A931EE524EB00184287 /* FRPPhotoViewModel.m */; };
 		3DDAC1B81EDC1FC900FF6E43 /* FRPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAC1B71EDC1FC900FF6E43 /* FRPCell.m */; };
 		3DDAC1BB1EDC324100FF6E43 /* FRPFullSizePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAC1BA1EDC324100FF6E43 /* FRPFullSizePhotoViewController.m */; };
 		3DDAC1BE1EDC38DD00FF6E43 /* FRPPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAC1BD1EDC38DD00FF6E43 /* FRPPhotoViewController.m */; };
@@ -74,6 +75,8 @@
 		3DCB5A8A1EE5125E00184287 /* FRPFullSizePhotoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPFullSizePhotoViewModel.m; sourceTree = "<group>"; };
 		3DCB5A8E1EE5175400184287 /* FRPGalleryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPGalleryViewModel.h; sourceTree = "<group>"; };
 		3DCB5A8F1EE5175400184287 /* FRPGalleryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPGalleryViewModel.m; sourceTree = "<group>"; };
+		3DCB5A921EE524EB00184287 /* FRPPhotoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPPhotoViewModel.h; sourceTree = "<group>"; };
+		3DCB5A931EE524EB00184287 /* FRPPhotoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPPhotoViewModel.m; sourceTree = "<group>"; };
 		3DDAC1B61EDC1FC900FF6E43 /* FRPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPCell.h; sourceTree = "<group>"; };
 		3DDAC1B71EDC1FC900FF6E43 /* FRPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPCell.m; sourceTree = "<group>"; };
 		3DDAC1B91EDC324100FF6E43 /* FRPFullSizePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPFullSizePhotoViewController.h; sourceTree = "<group>"; };
@@ -153,8 +156,7 @@
 				3D6CEAEA1EB4F0810057CF5F /* FRPPhotoImporter.m */,
 				3DCB5A8D1EE5172C00184287 /* FRPGallery */,
 				3DCB5A8C1EE516E500184287 /* FRPFullSizePhoto  */,
-				3DDAC1BC1EDC38DD00FF6E43 /* FRPPhotoViewController.h */,
-				3DDAC1BD1EDC38DD00FF6E43 /* FRPPhotoViewController.m */,
+				3DCB5A911EE524CD00184287 /* FRPPhotoVIew */,
 				3DDAC1B61EDC1FC900FF6E43 /* FRPCell.h */,
 				3DDAC1B71EDC1FC900FF6E43 /* FRPCell.m */,
 				3D9924951EB4A4F10005310E /* Main.storyboard */,
@@ -213,6 +215,17 @@
 				3DCB5A8F1EE5175400184287 /* FRPGalleryViewModel.m */,
 			);
 			name = FRPGallery;
+			sourceTree = "<group>";
+		};
+		3DCB5A911EE524CD00184287 /* FRPPhotoVIew */ = {
+			isa = PBXGroup;
+			children = (
+				3DDAC1BC1EDC38DD00FF6E43 /* FRPPhotoViewController.h */,
+				3DDAC1BD1EDC38DD00FF6E43 /* FRPPhotoViewController.m */,
+				3DCB5A921EE524EB00184287 /* FRPPhotoViewModel.h */,
+				3DCB5A931EE524EB00184287 /* FRPPhotoViewModel.m */,
+			);
+			name = FRPPhotoVIew;
 			sourceTree = "<group>";
 		};
 		58DC991C71B35B00405934B0 /* Frameworks */ = {
@@ -522,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCB5A941EE524EB00184287 /* FRPPhotoViewModel.m in Sources */,
 				3D6CEAEB1EB4F0810057CF5F /* FRPPhotoImporter.m in Sources */,
 				3D6CEAE81EB4EFE80057CF5F /* FRPPhotoModel.m in Sources */,
 				3D9924911EB4A4F10005310E /* FRPAppDelegate.m in Sources */,
