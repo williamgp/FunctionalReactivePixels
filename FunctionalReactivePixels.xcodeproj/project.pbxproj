@@ -18,6 +18,7 @@
 		3D99249C1EB4A4F10005310E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D99249A1EB4A4F10005310E /* LaunchScreen.storyboard */; };
 		3D9924A71EB4A4F10005310E /* FunctionalReactivePixelsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924A61EB4A4F10005310E /* FunctionalReactivePixelsTests.m */; };
 		3D9924B21EB4A4F10005310E /* FunctionalReactivePixelsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9924B11EB4A4F10005310E /* FunctionalReactivePixelsUITests.m */; };
+		3DCB5A8B1EE5125E00184287 /* FRPFullSizedPhotoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB5A8A1EE5125E00184287 /* FRPFullSizedPhotoViewModel.m */; };
 		3DDAC1B81EDC1FC900FF6E43 /* FRPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAC1B71EDC1FC900FF6E43 /* FRPCell.m */; };
 		3DDAC1BB1EDC324100FF6E43 /* FRPFullSizePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAC1BA1EDC324100FF6E43 /* FRPFullSizePhotoViewController.m */; };
 		3DDAC1BE1EDC38DD00FF6E43 /* FRPPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAC1BD1EDC38DD00FF6E43 /* FRPPhotoViewController.m */; };
@@ -68,6 +69,8 @@
 		3D9924AD1EB4A4F10005310E /* FunctionalReactivePixelsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunctionalReactivePixelsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9924B11EB4A4F10005310E /* FunctionalReactivePixelsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionalReactivePixelsUITests.m; sourceTree = "<group>"; };
 		3D9924B31EB4A4F10005310E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DCB5A891EE5125E00184287 /* FRPFullSizedPhotoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPFullSizedPhotoViewModel.h; sourceTree = "<group>"; };
+		3DCB5A8A1EE5125E00184287 /* FRPFullSizedPhotoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPFullSizedPhotoViewModel.m; sourceTree = "<group>"; };
 		3DDAC1B61EDC1FC900FF6E43 /* FRPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPCell.h; sourceTree = "<group>"; };
 		3DDAC1B71EDC1FC900FF6E43 /* FRPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRPCell.m; sourceTree = "<group>"; };
 		3DDAC1B91EDC324100FF6E43 /* FRPFullSizePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRPFullSizePhotoViewController.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				3D6CEAE21EB4D28C0057CF5F /* FRPGalleryViewController.m */,
 				3DDAC1B91EDC324100FF6E43 /* FRPFullSizePhotoViewController.h */,
 				3DDAC1BA1EDC324100FF6E43 /* FRPFullSizePhotoViewController.m */,
+				3DCB5A891EE5125E00184287 /* FRPFullSizedPhotoViewModel.h */,
+				3DCB5A8A1EE5125E00184287 /* FRPFullSizedPhotoViewModel.m */,
 				3DDAC1BC1EDC38DD00FF6E43 /* FRPPhotoViewController.h */,
 				3DDAC1BD1EDC38DD00FF6E43 /* FRPPhotoViewController.m */,
 				3DDAC1B61EDC1FC900FF6E43 /* FRPCell.h */,
@@ -505,6 +510,7 @@
 				3D6CEAE01EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m in Sources */,
 				3D99248E1EB4A4F10005310E /* main.m in Sources */,
 				3D6CEAE31EB4D28D0057CF5F /* FRPGalleryViewController.m in Sources */,
+				3DCB5A8B1EE5125E00184287 /* FRPFullSizedPhotoViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +694,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 5KSG8638H7;
 				INFOPLIST_FILE = FunctionalReactivePixelsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peregoy.FunctionalReactivePixelsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -702,6 +709,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 5KSG8638H7;
 				INFOPLIST_FILE = FunctionalReactivePixelsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peregoy.FunctionalReactivePixelsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -715,6 +723,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = 5KSG8638H7;
 				INFOPLIST_FILE = FunctionalReactivePixelsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peregoy.FunctionalReactivePixelsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -728,6 +737,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = 5KSG8638H7;
 				INFOPLIST_FILE = FunctionalReactivePixelsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.peregoy.FunctionalReactivePixelsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

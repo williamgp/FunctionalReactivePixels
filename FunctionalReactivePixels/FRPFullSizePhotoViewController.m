@@ -7,13 +7,12 @@
 //
 
 #import "FRPFullSizePhotoViewController.h"
+#import "FRPFullSizePhotoViewModel.h"
+
 #import "FRPPhotoModel.h"
 #import "FRPPhotoViewController.h"
 
 @interface FRPFullSizePhotoViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
-
-//Private assignment
-@property (nonatomic, strong) NSArray *photoModelArray;
 
 //Private properties
 @property (nonatomic, strong) UIPageViewController *pageViewController;
@@ -23,25 +22,17 @@
 
 @implementation FRPFullSizePhotoViewController
 
-- (instancetype)initWithPhotoModels:(NSArray *)photoModelArray currentPhotoIndex:(NSInteger)photoIndex {
+- (instancetype)init {
     
     self = [self init];
     if (!self) return nil;
-    
-    //Initialized, read-only properties
-    _photoModelArray = photoModelArray;
-    
-    //Configure self
-    self.title = [self.photoModelArray[photoIndex] photoName];
-    
-    //View controllers
-    _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey: @(30)}];
+
+    //View Controllers
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:@{UIPageViewControllerOptionInterPageSpacingKey: @(30)}];
     _pageViewController.delegate = self;
     _pageViewController.dataSource = self;
     [self addChildViewController:self.pageViewController];
 
-    [self.pageViewController setViewControllers:@[[self photoViewControllerForIndex:photoIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    
     return self;
 }
 
@@ -54,6 +45,12 @@
     //Configure subviews
     self.pageViewController.view.frame = self.view.bounds;
     [self.view addSubview:self.pageViewController.view];
+    
+    //Configure child view controllers
+    [self.pageViewController setViewControllers:@[[self photoViewControllerForIndex:self.viewModel.initialPhotoIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    //Configure self
+    self.title = [self.viewModel.initialPhotoModel photoName];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,8 +74,8 @@
 }
 
 - (FRPPhotoViewController *)photoViewControllerForIndex:(NSInteger)index {
-    if (index >= 0 && index < self.photoModelArray.count) {
-        FRPPhotoModel *photoModel = self.photoModelArray[index];
+    if (index >= 0 && index < self.viewModel.photoArray.count) {
+        FRPPhotoModel *photoModel = self.viewModel.model[index];
         
         FRPPhotoViewController *photoViewController = [[FRPPhotoViewController alloc] initWithPhotoModel:photoModel index:index];
         return photoViewController;
@@ -87,14 +84,5 @@
     //Index was out of bounds, return nil
     return nil;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
