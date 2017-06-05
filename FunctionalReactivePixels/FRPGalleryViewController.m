@@ -11,7 +11,7 @@
 #import "FRPPhotoImporter.h"
 #import "FRPCell.h"
 #import "FRPFullSizePhotoViewController.h"
-#import "FRPFullSizedPhotoViewModel.h"
+#import "FRPFullSizePhotoViewModel.h"
 
 #import <RACDelegateProxy.h>
 
@@ -57,7 +57,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [[self.collectionViewDelegate rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:)] subscribeNext:^(RACTuple *arguments) {
         
         @strongify(self);
-        FRPFullSizedPhotoViewModel *viewModel = [[FRPFullSizedPhotoViewModel alloc] initWithPhotoArray:self.viewModel.model initialPhotoIndex:indexPath.item];
+        FRPFullSizePhotoViewModel *viewModel = [[FRPFullSizePhotoViewModel alloc] initWithPhotoArray:self.viewModel.model initialPhotoIndex:indexPath.item];
         
         FRPFullSizePhotoViewController *viewController = [[FRPFullSizePhotoViewController alloc] init];
         

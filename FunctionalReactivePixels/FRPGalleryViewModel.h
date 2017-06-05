@@ -10,4 +10,6 @@
 
 @interface FRPGalleryViewModel : RVMViewModel
 
+@property (nonatomic, readonly, strong) NSArray *model;
+
 @end

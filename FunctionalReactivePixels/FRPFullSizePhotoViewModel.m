@@ -1,24 +1,24 @@
 //
-//  FRPFullSizedPhotoViewModel.m
+//  FRPFullSizePhotoViewModel.m
 //  FunctionalReactivePixels
 //
 //  Created by William Peregoy on 6/5/17.
 //  Copyright © 2017 William Peregoy. All rights reserved.
 //
 
-#import "FRPFullSizedPhotoViewModel.h"
+#import "FRPFullSizePhotoViewModel.h"
 
 //Model
 #import "FRPPhotoModel.h"
 
-@interface FRPFullSizedPhotoViewModel ()
+@interface FRPFullSizePhotoViewModel ()
 
 //Private access
 @property (nonatomic, assign) NSInteger initialPhotoIndex;
 
 @end
 
-@implementation FRPFullSizedPhotoViewModel
+@implementation FRPFullSizePhotoViewModel
 
 - (instancetype)initWithPhotoArray:(NSArray *)photoArray initialPhotoIndex:(NSInteger)initialPhotoIndex {
     

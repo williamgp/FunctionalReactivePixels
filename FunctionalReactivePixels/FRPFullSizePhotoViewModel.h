@@ -1,5 +1,5 @@
 //
-//  FRPFullSizedPhotoViewModel.h
+//  FRPFullSizePhotoViewModel.h
 //  FunctionalReactivePixels
 //
 //  Created by William Peregoy on 6/5/17.
@@ -10,7 +10,7 @@
 
 @class FRPPhotoModel;
 
-@interface FRPFullSizedPhotoViewModel : RVMViewModel
+@interface FRPFullSizePhotoViewModel : RVMViewModel
 
 - (instancetype)initWithPhotoArray:(NSArray *)photoArray
                  initialPhotoIndex:(NSInteger)initialPhotoIndex;
