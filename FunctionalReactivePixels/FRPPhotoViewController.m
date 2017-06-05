@@ -75,7 +75,7 @@
 }
 
 + (NSURLRequest *)photoURLRequest:(FRPPhotoModel *)photoModel {
-    return [AppDelegate.apiHelper urlRequestForPhotoID:photoModel.identifier.integerValue];
+    return [[PXRequest apiHelper] urlRequestForPhotoID:photoModel.identifier.integerValue];
 }
 
 /*

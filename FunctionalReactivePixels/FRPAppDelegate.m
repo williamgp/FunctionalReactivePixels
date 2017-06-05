@@ -21,7 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    self.apiHelper = [[PXAPIHelper alloc] initWithHost:nil consumerKey:@"4AIC83aylI052hE4IQRzvjua4b2tP7tUrK9sN36B" consumerSecret:@"VfIxaGJccL941OVRTcJbff8XjVtir2nOmkS9x1sW"];
+    [PXRequest setConsumerKey:@"4AIC83aylI052hE4IQRzvjua4b2tP7tUrK9sN36B" consumerSecret:@"VfIxaGJccL941OVRTcJbff8XjVtir2nOmkS9x1sW"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[FRPGalleryViewController new]];
