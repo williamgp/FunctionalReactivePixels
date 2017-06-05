@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ReactiveViewModel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,21 +47,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>009AD1607EE2A0096286FDAB4F2DE107</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0325EC57434B67D85473C6991A1097EE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2B9B9F52992680AFDD4B81AB4A0B7D25</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>3E5DDCF9C6A74B52E4B64C4256EA47D6</key>
 		<dict>
 			<key>primary</key>
@@ -72,7 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>74E9409FE0F9E98EFA15C1393769F080</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CF069261BC4FD55E00822CB56BB040FE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D90DD78EFA839057928A7535D67C28B3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4B3B81BC759B6A3A60127E586DCB8C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E7D646A4392A3F385494ECE70853277C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

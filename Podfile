@@ -6,10 +6,11 @@ target 'FunctionalReactivePixels' do
   # use_frameworks!
 
   # Pods for FunctionalReactivePixels
-  pod 'ReactiveObjC'
+  pod 'ReactiveObjC', '~> 2.1'
   pod 'libextobjc'
   pod '500px-iOS-api'
   pod 'SVProgressHUD'
+  pod 'ReactiveViewModel', :git => 'https://github.com/anivaros/ReactiveViewModel.git'
 
   target 'FunctionalReactivePixelsTests' do
     inherit! :search_paths
