@@ -24,7 +24,7 @@
 
 - (instancetype)init {
     
-    self = [self init];
+    self = [super init];
     if (!self) return nil;
 
     //View Controllers
@@ -50,7 +50,7 @@
     [self.pageViewController setViewControllers:@[[self photoViewControllerForIndex:self.viewModel.initialPhotoIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     //Configure self
-    self.title = [self.viewModel.initialPhotoModel photoName];
+    self.title = self.viewModel.initialPhotoName;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,7 +74,7 @@
 }
 
 - (FRPPhotoViewController *)photoViewControllerForIndex:(NSInteger)index {
-    if (index >= 0 && index < self.viewModel.photoArray.count) {
+    if (index >= 0 && index < self.viewModel.model.count) {
         FRPPhotoModel *photoModel = self.viewModel.model[index];
         
         FRPPhotoViewController *photoViewController = [[FRPPhotoViewController alloc] initWithPhotoModel:photoModel index:index];

@@ -8,6 +8,22 @@
 
 #import "FRPGalleryViewModel.h"
 
+//Utilities
+#import "FRPPhotoImporter.h"
+
+@interface FRPGalleryViewModel ()
+
+@end
+
 @implementation FRPGalleryViewModel
+
+- (instancetype)init {
+    self = [super init];
+    if (!self) return nil;
+    
+    RAC(self, model) = [[[FRPPhotoImporter importPhotos] logError] catchTo:[RACSignal empty]];
+
+    return self;
+}
 
 @end
