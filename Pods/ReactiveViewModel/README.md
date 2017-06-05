@@ -1,5 +1,4 @@
-
-# ReactiveViewModel [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# ReactiveViewModel
 
 ReactiveViewModel is a combination code/documentation project for building Cocoa
 applications using [Model-View-ViewModel](#model-view-viewmodel) and
@@ -101,10 +100,6 @@ MVVM, like
 [commands](https://github.com/ReactiveCocoa/ReactiveCocoa/blob/master/Documentation/FrameworkOverview.md#commands),
 and built-in bindings for AppKit and UIKit.
 
-## Getting Started
-
-To build ReactiveViewModel in isolation, open `ReactiveViewModel.xcworkspace`. To integrate it into your project, include `ReactiveViewModel.xcodeproj` and `ReactiveCocoa.xcodeproj` and link your target against the ReactiveViewModel and ReactiveCocoa targets for your platform.
-
 ## More Resources
 
 Model-View-ViewModel was originally developed by
@@ -114,7 +109,6 @@ or Silverlight, but there are still a few resources that may be useful:
 **Blog posts:**
 
  * [Basic MVVM with ReactiveCocoa](http://cocoasamurai.blogspot.com/2013/03/basic-mvvm-with-reactivecocoa.html)
- * [Model-View-ViewModel for iOS](http://www.teehanlax.com/blog/model-view-viewmodel-for-ios/)
  * [Presentation Model](http://martinfowler.com/eaaDev/PresentationModel.html)
 
 **Presentations:**

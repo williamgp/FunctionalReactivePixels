@@ -10,7 +10,8 @@
 #define FRP_Prefix_pch
 
 //Pods
-#import <ReactiveObjC/ReactiveObjc.h>
+#import <ReactiveCocoa.h>
+//#import <ReactiveObjC/ReactiveObjc.h>
 #import <500px-iOS-api/PXAPI.h>
 #import <libextobjc/EXTScope.h>
 

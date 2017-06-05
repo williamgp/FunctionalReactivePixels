@@ -35,34 +35,30 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - ReactiveObjC (2.1.2)
-  - ReactiveViewModel (0.4):
-    - ReactiveObjC (~> 2.1)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - ReactiveViewModel (0.1.1):
+    - ReactiveCocoa (~> 2.1)
   - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - 500px-iOS-api
   - libextobjc
-  - ReactiveObjC (~> 2.1)
-  - ReactiveViewModel (from `https://github.com/anivaros/ReactiveViewModel.git`)
+  - ReactiveViewModel (~> 0.1.1)
   - SVProgressHUD
-
-EXTERNAL SOURCES:
-  ReactiveViewModel:
-    :git: https://github.com/anivaros/ReactiveViewModel.git
-
-CHECKOUT OPTIONS:
-  ReactiveViewModel:
-    :commit: 95e5789b88567bef7d8186c5f8274585648472d0
-    :git: https://github.com/anivaros/ReactiveViewModel.git
 
 SPEC CHECKSUMS:
   500px-iOS-api: e1b28eaf9f389d5e9d694a19776b6f4937a7a6da
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
-  ReactiveViewModel: 0200fba29e45c08a6a994fc83c6e6a0613eeadb0
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveViewModel: 171492c2d30d3eb3c89730fd180c0f6a2ae7e774
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: f88fbd96bba273709510bb10d3761fd4f575c930
+PODFILE CHECKSUM: 7ba53a8be32c1b33555592e45ea1cc7c979aeb95
 
 COCOAPODS: 1.2.1
