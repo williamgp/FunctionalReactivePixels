@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D61D0731EE6D365000B8383 /* FRPFullSizePhotoViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB5A951EE6AD6200184287 /* FRPFullSizePhotoViewModelTests.m */; };
 		3D6CEAE01EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CEADF1EB4D21D0057CF5F /* FRPGalleryViewFlowLayout.m */; };
 		3D6CEAE31EB4D28D0057CF5F /* FRPGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CEAE21EB4D28C0057CF5F /* FRPGalleryViewController.m */; };
 		3D6CEAE81EB4EFE80057CF5F /* FRPPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6CEAE71EB4EFE80057CF5F /* FRPPhotoModel.m */; };
@@ -21,7 +22,6 @@
 		3DCB5A8B1EE5125E00184287 /* FRPFullSizePhotoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB5A8A1EE5125E00184287 /* FRPFullSizePhotoViewModel.m */; };
 		3DCB5A901EE5175400184287 /* FRPGalleryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB5A8F1EE5175400184287 /* FRPGalleryViewModel.m */; };
 		3DCB5A941EE524EB00184287 /* FRPPhotoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB5A931EE524EB00184287 /* FRPPhotoViewModel.m */; };
-		3DCB5A961EE6AD6200184287 /* FRPFullSizePhotoViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB5A951EE6AD6200184287 /* FRPFullSizePhotoViewModelTests.m */; };
 		3DCB5A981EE6B5B300184287 /* FRPGalleryViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB5A971EE6B5B300184287 /* FRPGalleryViewModelTests.m */; };
 		3DCB5A9A1EE6B84500184287 /* FRPPhotoViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB5A991EE6B84500184287 /* FRPPhotoViewModelTests.m */; };
 		3DDAC1B81EDC1FC900FF6E43 /* FRPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAC1B71EDC1FC900FF6E43 /* FRPCell.m */; };
@@ -563,8 +563,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D61D0731EE6D365000B8383 /* FRPFullSizePhotoViewModelTests.m in Sources */,
 				3DCB5A9A1EE6B84500184287 /* FRPPhotoViewModelTests.m in Sources */,
-				3DCB5A961EE6AD6200184287 /* FRPFullSizePhotoViewModelTests.m in Sources */,
 				3DCB5A981EE6B5B300184287 /* FRPGalleryViewModelTests.m in Sources */,
 				3D9924A71EB4A4F10005310E /* FunctionalReactivePixelsTests.m in Sources */,
 			);
