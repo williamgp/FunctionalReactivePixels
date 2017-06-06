@@ -10,11 +10,15 @@ target 'FunctionalReactivePixels' do
   pod 'libextobjc'
   pod '500px-iOS-api'
   pod 'SVProgressHUD'
-  pod 'ReactiveViewModel', '~> 0.1.1'
+  pod 'ReactiveViewModel', tag: '0.1.2', git: 'https://github.com/ashfurrow/ReactiveViewModel'
   #pod 'ReactiveViewModel', :git => 'https://github.com/anivaros/ReactiveViewModel.git'
 
   target 'FunctionalReactivePixelsTests' do
     inherit! :search_paths
+    
+    pod 'Specta', '~> 0.2.1'
+    pod 'Expecta', '~> 0.2'
+    pod 'OCMock', '~> 2.2.2'
     # Pods for testing
   end
 

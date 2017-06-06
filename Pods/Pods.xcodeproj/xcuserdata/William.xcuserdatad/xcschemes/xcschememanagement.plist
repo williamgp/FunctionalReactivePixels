@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Expecta.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>OCMock.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-FunctionalReactivePixels.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Specta.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>libextobjc.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +62,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1E6CDC0EF2249816FD82A0D4FE790692</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3E5DDCF9C6A74B52E4B64C4256EA47D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>44E1D5393ABBF52B35D2A8A66B3D5CAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>46D68D26DCAAC4D999D549BA45F0B0EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,12 +97,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AEDF00D651DA8DF5A49B974DF496B93C</key>
+		<key>A13EF0AAC7A7F76290AAEAD12FF05470</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CF069261BC4FD55E00822CB56BB040FE</key>
+		<key>A1DB2605D369C8CF949EED51CB8EA7EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AEDF00D651DA8DF5A49B974DF496B93C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

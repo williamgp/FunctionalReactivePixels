@@ -1,5 +1,6 @@
 PODS:
   - 500px-iOS-api (1.0.4)
+  - Expecta (0.4.2)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
     - libextobjc/EXTConcreteProtocol (= 0.4.1)
@@ -35,6 +36,7 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
+  - OCMock (2.2.4)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -44,21 +46,38 @@ PODS:
     - ReactiveCocoa/Core
   - ReactiveViewModel (0.1.1):
     - ReactiveCocoa (~> 2.1)
+  - Specta (0.2.1)
   - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - 500px-iOS-api
+  - Expecta (~> 0.2)
   - libextobjc
-  - ReactiveViewModel (~> 0.1.1)
+  - OCMock (~> 2.2.2)
+  - ReactiveViewModel (from `https://github.com/ashfurrow/ReactiveViewModel`, tag `0.1.2`)
+  - Specta (~> 0.2.1)
   - SVProgressHUD
+
+EXTERNAL SOURCES:
+  ReactiveViewModel:
+    :git: https://github.com/ashfurrow/ReactiveViewModel
+    :tag: 0.1.2
+
+CHECKOUT OPTIONS:
+  ReactiveViewModel:
+    :git: https://github.com/ashfurrow/ReactiveViewModel
+    :tag: 0.1.2
 
 SPEC CHECKSUMS:
   500px-iOS-api: e1b28eaf9f389d5e9d694a19776b6f4937a7a6da
+  Expecta: 78b4e8b0c8291fa4524d7f74016b6065c2e391ec
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  OCMock: a6a7dc0e3997fb9f35d99f72528698ebf60d64f2
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
-  ReactiveViewModel: 171492c2d30d3eb3c89730fd180c0f6a2ae7e774
+  ReactiveViewModel: 5d852269482387abd4e343cff4c05004967a0707
+  Specta: 15a276a6343867b426d5ed135d5aa4d04123a573
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 7ba53a8be32c1b33555592e45ea1cc7c979aeb95
+PODFILE CHECKSUM: b1abc8b86fd7412143fc5b65dbb503f044e5121c
 
 COCOAPODS: 1.2.1
